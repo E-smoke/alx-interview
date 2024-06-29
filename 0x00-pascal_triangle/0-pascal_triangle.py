@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 '''
-pascal triangle module
+Pascal triangle module
 '''
 
 def pascal_triangle(n):
-    '''pascal triangle function'''
+    '''Pascal triangle function'''
     li = []
     if n <= 0:
         return li
@@ -13,9 +13,8 @@ def pascal_triangle(n):
     for i in range(1, n):
         append_li = []
         append_li.append(1)
-        for j in range(i + 1):
-            if ((j + 1 < i)):
-                append_li.append(temp_li[j] + temp_li[j + 1])
+        for j in range(1, i):
+            append_li.append(temp_li[j - 1] + temp_li[j])
         append_li.append(1)
         temp_li = append_li
         li.append(append_li)
