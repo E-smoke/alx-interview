@@ -12,7 +12,8 @@ def signal_handler(sig, frame):
 
     print('file size: {:d}'.format(fsize))
     for i in codes:
-        print('{}: {}'.format(i, codes[i]))
+        if codes[i]:
+            print('{}: {}'.format(i, codes[i]))
     sys.exit(0)
 
 if __name__ == "__main__":
@@ -33,4 +34,5 @@ if __name__ == "__main__":
                     codes[words[l - 2]] += 1
         print('file size: {:d}'.format(fsize))
         for i in codes:
-            print('{}: {}'.format(i, codes[i]))
+            if codes[i]:
+                print('{}: {}'.format(i, codes[i]))
